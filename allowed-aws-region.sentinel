@@ -1,0 +1,7 @@
+# Valid Region 
+valid_region = eu-west-2
+
+
+main = rule {
+  required_region in valid_regions
+}
