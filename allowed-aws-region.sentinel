@@ -1,9 +1,16 @@
-import "tfplan"
+# Import the Terraform resource data
+import "tfplan/v2" as tfplan
 
-# Valid Region 
-valid_region = eu-west-2
+# Define the required region
+required_region = "eu-west-2"
 
-
+# Define the rule to check the region
 main = rule {
-  required_region in valid_region
+  all tfplan.resource_changes as resource_change {
+    all resource_change.change.after as after {
+      # Ensure that each resource is in the required region
+      after.location is required_region or
+      after.region is required_region
+    }
+  }
 }
