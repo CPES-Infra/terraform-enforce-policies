@@ -6,6 +6,6 @@ policy "allowed-terraform-version" {
   enforcement_level = "soft-mandatory"
 }
 
-policy "allowed-aws-region" {
+policy "allowed-aws-region.sentinel" {
   enforcement_level = "hard-mandatory"
 }
