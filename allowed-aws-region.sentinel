@@ -10,7 +10,7 @@ import "strings"
 region_values = []
 
 # Allowed Regions
-allowed_regions = "eu-west-2"
+allowed_regions = "us-east-2"
   
 
 # Iterate through all AWS providers in root module
